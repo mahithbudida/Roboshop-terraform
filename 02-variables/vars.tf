@@ -13,3 +13,4 @@ output "sample1" {
 // Variable if it is combined with some other string then we have to use ${} interpolation for variable accessing
 
 
+variable "sample2" {}
