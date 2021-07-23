@@ -69,3 +69,15 @@ output "TRAINING-DETAILS" {
 output "TRAININGS" {
   value = var.TRAININGS
 }
+
+// So far we have declared value with in variable block.
+# Now the data comes from different sources
+
+// Variables from tfvars
+
+variable "FRUITS" {}
+
+output "FRUITS" {
+  value = var.FRUITS
+}
+
