@@ -86,3 +86,7 @@ output "COUNTRY" {
   value = var.COUNTRY
 }
 
+variable "SEASON" {}
+output "SEASON" {
+  value = var.SEASON
+}
