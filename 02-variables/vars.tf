@@ -65,3 +65,7 @@ output "SECOND-TRAINING" {
 output "TRAINING-DETAILS" {
   value = "AWS TIMING - ${var.TRAINING-DETAILS["AWS"]}"
 }
+
+output "TRAININGS" {
+  value = var.TRAININGS
+}
