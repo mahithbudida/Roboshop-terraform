@@ -1,7 +1,7 @@
 resource "aws_instance" "sample" {
-  count                 = 0
+  //count                 = 0
   ami                   = "ami-074df373d6bafa625"
-  instance_type         = "t3.micro"
+  instance_type         = var.TYPE ? var.TYPE : "t3.micro"
   //vpc_security_group_ids = [aws_security_group.allow_ssh.id]
 
   tags                  = {
@@ -12,3 +12,5 @@ resource "aws_instance" "sample" {
 provider "aws" {
   region = "us-east-1"
 }
+
+variable "TYPE" {}
