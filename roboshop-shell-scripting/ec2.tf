@@ -5,7 +5,7 @@ resource "aws_spot_instance_request" "cheap_worker" {
   instance_type             = "t3.micro"
   vpc_security_group_ids    = ["sg-0d00b6b80c9e9b60c"]
   wait_for_fulfillment      = true
-
+  //spot_type                 = "persistent"
   tags                      = {
     Name                    = element(var.COMPONENTS, count.index)
   }
