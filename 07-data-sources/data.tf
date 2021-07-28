@@ -21,3 +21,7 @@ output "amis" {
 output "spot" {
   value = data.aws_ec2_spot_price.example
 }
+
+provider "aws" {
+  region = "us-east-1"
+}
