@@ -14,9 +14,9 @@ data "aws_ec2_spot_price" "example" {
   }
 }
 
-output "amis" {
-  value = data.aws_ami.example.id
-}
+//output "amis" {
+ // value = data.aws_ami.example.id
+//}
 
 output "spot" {
   value = data.aws_ec2_spot_price.example.spot_price
