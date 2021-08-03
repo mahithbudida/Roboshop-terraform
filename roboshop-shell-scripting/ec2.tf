@@ -2,7 +2,7 @@ resource "aws_spot_instance_request" "cheap_worker" {
   count                     = local.LENGTH
   ami                       = "ami-074df373d6bafa625"
   spot_price                = "0.0031"
-  instance_type             = "t3.micro"
+  instance_type             = "t2.micro"
   vpc_security_group_ids    = ["sg-0d00b6b80c9e9b60c"]
   wait_for_fulfillment      = true
   //spot_type                 = "persistent"
@@ -39,7 +39,7 @@ resource "null_resource" "run-shell-scripting" {
 
     inline = [
     "cd /home/centos",
-    "git clone https://DevOps-Batches@dev.azure.com/DevOps-Batches/DevOps57/_git/shell-scripting",
+    "git clone https://github.com/mahithbudida/Roboshop-shellscripting.git",
     "cd shell-scripting/roboshop",
     "sudo make ${element(var.COMPONENTS, count.index)}"
     ]
