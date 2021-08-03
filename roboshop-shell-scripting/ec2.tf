@@ -1,7 +1,17 @@
+data "aws_ec2_spot_price" "example" {
+  instance_type     = "t2.micro"
+  availability_zone = "us-east-1a"
+
+  filter {
+    name   = "product-description"
+    values = ["Linux/UNIX"]
+  }
+}
+
 resource "aws_spot_instance_request" "cheap_worker" {
   count                     = local.LENGTH
   ami                       = "ami-074df373d6bafa625"
-  spot_price                = "0.0035"
+  spot_price                = [aws_ec2_spot_price.]
   instance_type             = "t2.micro"
   vpc_security_group_ids    = ["sg-061b8d4afe08bb944"]
   wait_for_fulfillment      = true
