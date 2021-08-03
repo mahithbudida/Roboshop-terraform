@@ -9,7 +9,7 @@ data "aws_ec2_spot_price" "example" {
 }
 
 resource "aws_spot_instance_request" "cheap_worker" {
-  depends_on                = [aws_ec2_spot_price.example]
+  depends_on                = [data.aws_ec2_spot_price.example]
   count                     = local.LENGTH
   ami                       = "ami-074df373d6bafa625"
   spot_price                = [aws_ec2_spot_price.example.spot_price]
