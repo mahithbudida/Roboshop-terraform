@@ -19,7 +19,7 @@ output "amis" {
 }
 
 output "spot" {
-  value = data.aws_ec2_spot_price.example.*
+  value = data.aws_ec2_spot_price.example.spot_price
 }
 
 provider "aws" {
