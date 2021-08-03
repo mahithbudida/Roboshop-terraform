@@ -5,7 +5,7 @@ data "aws_ami" "example" {
 }
 
 data "aws_ec2_spot_price" "example" {
-  instance_type     = "t3.micro"
+  instance_type     = "t2.micro"
   availability_zone = "us-east-1a"
 
   filter {
