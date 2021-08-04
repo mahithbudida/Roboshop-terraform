@@ -12,7 +12,7 @@ pipeline {
       }
     }
 
-    stage('Terraform Destroy') {
+    stage('Terraform ++ Destroy') {
       steps {
         sh '''
           cd roboshop-shell-scripting
