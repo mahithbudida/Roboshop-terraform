@@ -4,14 +4,10 @@ pipeline {
   stages {
 
     stage('Terraform INIT') {
-            environment{
-              ACCESS_KEY = credentials('terraform')
-              }
-
       steps {
         sh '''
         cd roboshop-shell-scripting
-        terraform init -backend-config={ACCESS_KEY}
+        terraform init
         '''
       }
     }
