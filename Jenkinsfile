@@ -1,10 +1,6 @@
 pipeline {
   agent any
 
-  environment {
-            AWS_ACCESS_KEY  = credentials('TERRAFORM')
-
-          }
   stages {
 
     stage('Terraform INIT') {
