@@ -1,15 +1,21 @@
 pipeline {
   agent any
 
-
+  environment{
+  ACCESS_KEY = credentials('terraform')
+  }
 
   stages {
+      environment{
+      ACCESS_KEY = credentials('terraform')
+      }
 
     stage('Terraform INIT') {
+
       steps {
         sh '''
         cd roboshop-shell-scripting
-        terraform init
+        terraform init -backend-config={Terraform}
         '''
       }
     }
