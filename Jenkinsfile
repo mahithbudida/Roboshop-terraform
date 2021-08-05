@@ -2,11 +2,11 @@ pipeline {
   agent any
 
   stages {
-      environment{
-      ACCESS_KEY = credentials('terraform')
-      }
 
     stage('Terraform INIT') {
+            environment{
+              ACCESS_KEY = credentials('terraform')
+              }
 
       steps {
         sh '''
