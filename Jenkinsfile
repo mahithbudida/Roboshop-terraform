@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh '''
         cd roboshop-shell-scripting
-        terraform init -backend-config={Terraform}
+        terraform init -backend-config={ACCESS_KEY}
         '''
       }
     }
